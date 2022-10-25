@@ -1,0 +1,31 @@
+//this program creates an array from selected number 'a' to selected number 'b' by the count of 'c' and sums it all up.
+
+let arr = [];
+function createArr(a, b, c){
+  
+  if (c){
+    for (let i=a; i<=b; i = i+c){
+      arr.push(i)
+    }
+    return arrSum(arr)
+  }
+  else {for (let i=a; i<=b; i++){
+      arr.push(i)
+    }
+    return arrSum(arr)
+    
+  }
+function arrSum(){
+  let sum = 0
+  for (let i=0; i<arr.length; i++){
+    sum = sum + arr[i]
+  }
+  return sum
+}
+  
+}
+
+
+
+
+console.log(createArr(1,10,2))
