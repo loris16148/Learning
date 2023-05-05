@@ -1,0 +1,143 @@
+/*Creating Your Own Objects
+
+
+Bob was hired as an airport information officer and needs to generate status messages for each flight․ Let’s help him!
+Complete the given program by fixing the constructor, making a flight object, and assign it to given variable to correctly execute the corresponding message.
+Flight ID and the flight status(landed, on time, delayed, etc.) are taken as input.
+
+Sample Input
+NGT 929
+landed
+
+Sample Output
+Flight NGT 929 has landed
+Use new keyword to create a new object using constructor.
+*/
+
+
+function main() {
+    //take flight number and its status
+    var flightNumber = readLine();
+    var flightStatus = readLine();
+    
+    var flight1 = new Flight(flightNumber, flightStatus);
+    //assign a flight object to flight1 variable
+    
+    //output
+    console.log('The flight ' + flight1.number + ' is ' + flight1.status)
+    
+}
+
+function Flight(flightNumber, flightStatus) {
+    //fix the constructor
+    this.number = flightNumber;
+    this.status = flightStatus;
+};
+
+
+------------------------------------------------------------------------------
+Adding Methods
+
+
+A store manager needs a program to set discounts for products.
+The program should take the product ID, price and discount as input and output the discounted price. However, the changePrice method, which should calculate the discount, is incomplete. Fix it!
+
+Sample Input
+LD1493
+1700
+15
+
+Sample Output
+LD1493 price: 1700
+LD1493 new price: 1445
+The first input is the product ID, the second is the price before discounting, and the third is discount percentage.
+So after discounting the new price will be 1700-(0.15*1700) = 1445.
+
+function main() {
+    var prodID = readLine();
+    var price = parseInt(readLine(),10);
+    var discount = parseInt(readLine(),10);
+    
+    var prod1= new Product(prodID, price);
+    console.log(prod1.prodID + " price: " + prod1.price);
+    
+    prod1.changePrice(discount);
+    console.log(prod1.prodID + " new price: " + prod1.price);
+}
+
+function Product(prodID, price) {
+    this.prodID = prodID;
+    this.price = price;
+
+    this.changePrice = function(discount) {
+        //your code goes here
+        this.price =price - (price * discount/100)
+        return this.price
+    }
+}
+
+---------------------------------------------------------------------------------
+Contact Manager
+
+
+You are working on a Contact Manager app.
+You have created the contact object constructor, which has two arguments, name and number.
+You need to add a print() method to the object, which will output the contact data to the console in the following format: name: number
+The given code declares two objects and calls their print() methods. Complete the code by defining the print() method for the objects.
+Notice the space after the colon, when outputting the contact data.
+
+
+function contact(name, number) {
+    this.name = name;
+    this.number = number;   
+    this.print =() => {
+        console.log(this.name + ": " + this.number)}
+}
+
+
+var a = new contact("David", 12345);
+var b = new contact("Amy", 987654321);
+a.print();
+b.print();
+
+------------------------------------------------------------------------------
+increasing price by input
+
+function main() {
+    var increase = parseInt(readLine(), 10);
+    var prices = [98.99, 15.2, 20, 1026];
+    //your code goes here
+
+    
+   const newprices = prices.map(x => x+increase)
+    console.log(newprices)
+}
+----------------------------------------------------------------------------
+
+constructor
+
+You are making a text encryptor. It should take multiple words and output a combined version, where each word is separated by a dollar sign $.
+For example, for the words "hello", "how", "are", "you", the output should be "$hello$how$are$you$".
+The given code declares a class named Add, with a constructor that takes one rest parameter.
+Complete the code by adding a print() method to the class, which should generate the requested output.
+
+class Add {
+  constructor(...words) {
+      this.words = words;
+  }
+  
+  print (){
+    let s =""
+    for (let g of this.words){
+    
+     s = s + "$"+g
+    }
+    console.log(s + "$")//your code goes here
+}}
+
+var x = new Add("hehe", "hoho", "haha", "hihi", "huhu");
+var y = new Add("this", "is", "awesome");
+var z = new Add("lorem", "ipsum", "dolor", "sit", "amet", "consectetur", "adipiscing", "elit");
+x.print();
+y.print();
+z.print();
