@@ -1,0 +1,16 @@
+function powerTwo(n){
+
+for (let i = 0; i<n; i++){
+
+z = 2**i
+if(z===n){
+console.log(i);
+break
+}
+else {console.log("unable"); break}
+//console.log(z)
+
+}
+}
+
+powerTwo(257)
