@@ -1,0 +1,32 @@
+/*Find the Missing Number: Write a function that takes an array of numbers from 1 to n (with one number missing) and returns the missing number. For example, given the input [1, 2, 4, 5, 6], the function should return 3.
+
+1. 
+
+
+*/
+function missing(arr){
+let x = -1
+let y = arr[0] -1
+  
+for (let i=arr[0] ;i<=arr[arr.length -1]; i++){
+  
+  y++
+  x++
+  
+  //console.log(i,y)
+  //console.log(arr[x],y)
+  //console.log("=" + i)
+   if (y != arr[x]){
+    console.log(y)
+    break
+  
+  
+  }
+ 
+}
+
+  
+  
+}
+
+missing([17,18,19,21,22,23])
