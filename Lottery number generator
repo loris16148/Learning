@@ -1,0 +1,113 @@
+<!doctype html>
+<html>
+  <link rel="stylesheet" href="style.css">
+  <body>
+    <h1>
+    Winning lottery number generator   
+    </h1>
+    <div>
+    <button id="myButton">Click me</button>
+    <p id="resultDisplay">Numbers will show here</p>
+    </div>
+    <a href="second.html" <button>To Subscription</button></a>
+   <script src=script.js></script>
+  </body>
+  
+</html>
+
+
+
+// https://www.lottonumbers.com/california-superlotto/common-numbers
+//let previousNumbers = [[3,15,16,32,41,9,2]]
+
+let button = document.getElementById("myButton");
+let resultDisplay = document.getElementById("resultDisplay");
+button.addEventListener("click", function() {
+  button.textContent = "click again";
+  let colors = ["red", "blue", "green", "yellow", "black", "orange", "indigo"]
+  let v = Math.floor(Math.random()*6)
+  button.style.color = colors[v];
+  let x = Math.floor(1 +Math.random() * 70);
+  let y = Math.floor(1 +Math.random() * 70);
+  let z = Math.floor(1 +Math.random() * 70);
+  let a = Math.floor(1 +Math.random() * 70);
+  let b = Math.floor(1 +Math.random() * 70);
+  let d = Math.floor(1 +Math.random() * 70);
+  let c = Math.floor(1 +Math.random() * 25);
+  resultDisplay.textContent = `${x} ${y} ${z} ${a} ${b} ${d} ${c}`;
+  console.log(v)
+  
+});
+
+
+function func1() {
+    document.getElementById("subscribe").value  = 'subscribed';
+}
+
+function func() {
+    document.getElementById("unsubscribe").value  = 'unsubscribed';
+}
+
+
+
+html {
+  background: #f7f2f1 url("background.png") no-repeat;
+  height: 100%;
+  width: 100%;
+}
+div {
+  
+  font-size: 36px;
+  color: #198;
+  
+  flex: 20 15 auto;
+  border: 1px solid black;
+  border-radius: 30px;
+  
+}
+button {
+  background-color: #199;
+  color: 059;
+  
+}
+
+
+
+<!doctype html>
+<html>
+  <link rel="stylesheet" href="style.css">
+  <body>
+    <h1>
+    Third page test  
+    </h1>
+    <a href="index.html"><button>Back</button></a>
+    <div>
+      
+    <input onclick="func()" id="unsubscribe" type="button" value="unsubscribe"></input>
+      
+    
+    </div>
+   
+  </body>
+  <script src=script.js></script>
+</html>
+
+<!doctype html>
+<html>
+  <link rel="stylesheet" href="style.css">
+  <body>
+    <h1>
+    CLICK THE BUTTON BELOW TO SUBSCRIBE   
+    </h1>
+    <a href="index.html"><button>Back</button></a>
+    <div>
+      
+    <input onclick="func1()" id="subscribe" type="button" value="subscribe"></input>
+      
+    
+    </div>
+    <a href="third.html"><button>To third Page</button></a>
+   
+  </body>
+  <script src=script.js></script>
+</html>
